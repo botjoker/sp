@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block page %}
+    <div class="map">
+        <div class="map-left">
+            Фильтр
+        </div>
+        <div class="map-container" id="ymap">
+
+        </div>
+    </div>
+
+
+
+    <script src="https://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+
+    <script type="text/javascript">
+		var myMap;
+
+		ymaps.ready(init);
+  		function init () {
+		    var myMap = new ymaps.Map("ymap", {
+			      center: [],
+			      zoom: 15
+		    	}),
+		    myPlacemark = new ymaps.Placemark([ ], {
+		              balloonContentHeader: "  ",
+		              balloonContentBody: " ",
+		              /*balloonContentFooter: "Подвал",
+		              hintContent: "Хинт метки"*/
+            });
+
+		    myMap.controls
+				// Кнопка изменения масштаба.
+				.add('zoomControl', { left: 5, top: 5 })
+				// Список типов карты
+				.add('typeSelector')
+				// Стандартный набор кнопок
+				.add('mapTools', { left: 35, top: 5 });
+			myMap.geoObjects.add(myPlacemark);
+
+
+        }
+      </script>
+{% endblock %}

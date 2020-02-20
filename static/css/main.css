@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&display=swap&subset=cyrillic,cyrillic-ext');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 36px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.content {
+    min-height: 100vh;
+
+}
+
+header {
+    background: #FFF;
+    padding: 25px;
+    height: 70px;
+    overflow: hidden;
+}
+.header__logo {
+    float: left;
+}
+.header__main-menu {
+    list-style: none;
+    float: left;
+}
+.header__main-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.header__main-menu li.current a {
+    color: #000;
+}
+.header__main-menu li a {
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+}
+.header__right {
+    float: right;
+}
+
+footer {
+    background: #191919;
+    padding: 10px 10px 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    display: inline-block;
+    margin-right: 20px;
+    color: #929292;
+}
+
+footer li a {
+    color: #929292;
+}
+
+
+/*** main ****/
+
+
+.main {
+    background: #212121;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+
+/*** map ****/
+
+.map {
+    border-top: 1px solid #CCC;
+    height: calc(100vh - 37px);
+}
+.map-left {
+    float: left;
+    width: 285px;
+    background: #FFF;
+    padding: 20px;
+}
+.map-container {
+    margin-left: 285px;
+    height: calc(100vh - 37px);
+}

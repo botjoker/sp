@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Виды спорта{% endblock %}
+
+{% block page %}
+    <div class="main">
+        {% for sport in sports %}
+            <a href="{% url 'sport-detail' sport_id=sport.id %}">{{  sport.name }}</a>
+            {% if sport.image %}
+                <img src="{{ sport.image.url }}" alt="">
+            {% endif %}
+            <div>{{ sport.name }}</div>
+        {% endfor %}
+    </div>
+{% endblock %}
