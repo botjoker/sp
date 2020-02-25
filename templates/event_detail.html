@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}{{sport.name}}{% endblock %}
+{% block title %}{{event.name}}{% endblock %}
 {% block page %}
     <div class="back-line">
         <a href="">< Назад</a>
     </div>
-
-
-
-
     <div class="detail-page">
         {% for slide in slides %}
         <div class="sport-detail__section">

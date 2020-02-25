@@ -25,7 +25,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('second/<str:sport_id>/', views.sport_detail, name='sport-detail'),
+    path('sport/<str:sport_id>/', views.sport_detail, name='sport-detail'),
+    path('events/<str:event_id>/', views.event_detail, name='event-detail'),
     path('contacts/', views.contacts, name='contacts'),
     path('map/', views.map, name='map'),
     path('stadiums/', views.stadiums, name='stadiums'),

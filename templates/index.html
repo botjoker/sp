@@ -4,12 +4,24 @@
 
 {% block page %}
     <div class="main">
-        {% for sport in sports %}
-            <a href="{% url 'sport-detail' sport_id=sport.id %}">{{  sport.name }}</a>
-            {% if sport.image %}
-                <img src="{{ sport.image.url }}" alt="">
-            {% endif %}
-            <div>{{ sport.name }}</div>
-        {% endfor %}
+        <div class="sports-wrapper">
+            <div class="sports">
+                <div class="sports-text">
+                    Мы все ждём лета! Дети и взрослые!
+                    Каждый из нас хочет провести его ярко, в отличной компании и с пользой для себя и своего ребёнка.
+                    Наша команда подобрала для вашей семьи отличные варианты его проведения.
+                </div>
+                {% for sport in sports %}
+                    <div class="sports-item">
+                        <a href="{% url 'sport-detail' sport_id=sport.id %}">
+                            {% if sport.image %}
+                                <img class="sports-item__img" width="100%" src="{{ sport.image.url }}" alt="">
+                            {% endif %}
+                            <span class="sports-item__title">{{ sport.name }}</span>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -3,5 +3,24 @@
 {% block title %}События{% endblock %}
 
 {% block page %}
-   Events
+    <div class="events-page">
+        <div class="events-top">
+            <a class="events-top__link">Футбол</a>
+            <a class="events-top__link">Единоборства</a>
+            <a class="events-top__link">Гимнастика</a>
+        </div>
+        <div class="events-content">
+            {% for event in events %}
+                <a href="/events/{{ event.id }}" class="event-item">
+                    <span class="event-item__info">
+                        <span class="event-item__type">{{ event.sport }}</span>
+                        <span class="event-item__date">{{ event.eventDate }}</span>
+                    </span>
+                    <span class="event-item__img" style="background-image: url({{ event.image.url }})">
+                        <span class="event-item__title">{{ event.name }}</span>
+                    </span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

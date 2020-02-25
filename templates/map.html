@@ -5,7 +5,10 @@
 {% block page %}
     <div class="map">
         <div class="map-left">
-            Фильтр
+            <div class="map-left__title">Виды спорта</div>
+            <div class="map-left__item">Футбол</div>
+            <div class="map-left__item">Прикладная гимнастика</div>
+            <div class="map-left__item">Единоборства</div>
         </div>
         <div class="map-container" id="ymap">
 
@@ -22,8 +25,8 @@
 		ymaps.ready(init);
   		function init () {
 		    var myMap = new ymaps.Map("ymap", {
-			      center: [],
-			      zoom: 15
+			      center: [55.753215, 37.622504],
+			      zoom: 5
 		    	}),
 		    myPlacemark = new ymaps.Placemark([ ], {
 		              balloonContentHeader: "  ",
