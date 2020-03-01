@@ -6,6 +6,7 @@ class Sport(models.Model):
     image = models.ImageField('Изображение', upload_to='main/images', default='',blank=True)
     secondimage = models.ImageField('Изображение детальное', upload_to='main/images', default='', blank=True)
     description = models.TextField(verbose_name='Описание',default='',blank=True)
+    sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
 
     class Meta:
         verbose_name='Вид спорта'
@@ -21,6 +22,7 @@ class SportSlide(models.Model):
     name = models.CharField(max_length=250)
     description = models.TextField(verbose_name='Описание', default='', blank=True)
     image = models.ImageField('Изображение', upload_to='main/images', default='', blank=True, null=True)
+    sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
 
     class Meta:
         verbose_name='Блок для видов спорта'
@@ -38,6 +40,7 @@ class Events(models.Model):
     secondimage = models.ImageField('Изображение детальное', upload_to='main/images', default='', blank=True)
     description = models.TextField(verbose_name='Описание',default='',blank=True)
     eventDate = models.DateField()
+    sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
 
     class Meta:
         verbose_name='Событие'
@@ -52,6 +55,7 @@ class EventSlide(models.Model):
     name = models.CharField(max_length=250)
     description = models.TextField(verbose_name='Описание', default='', blank=True)
     image = models.ImageField('Изображение', upload_to='main/images', default='', blank=True, null=True)
+    sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
 
     class Meta:
         verbose_name='Блок для событий'

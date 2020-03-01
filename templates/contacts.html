@@ -3,5 +3,38 @@
 {% block title %}Контакты{% endblock %}
 
 {% block page %}
-   Контакты
+    <div class="contacts-page">
+        <div class="contacts-top">
+            <img src="/static/img/contacts.jpg" width="100%" alt="">
+        </div>
+        <div class="contacts-info">
+            <div class="contacts-info__item">
+                <div class="contacts-info__item-icon contacts-info__item-icon-location"></div>
+                <div class="contacts-info__item-text">
+                    <a href="tel:8495120606">+7 495 120 6 06</a><br/>
+                    <a href="mailto:info@school-ball.com">info@school-ball.com</a>
+                </div>
+            </div>
+            <div class="contacts-info__item">
+                <div class="contacts-info__item-icon contacts-info__item-icon-data"></div>
+                <div class="contacts-info__item-text">
+                    <span>Мы ждём вашего звонка</span>
+                    <div>Пн - Вс</div>
+                </div>
+            </div>
+            <div class="contacts-info__item">
+                <div class="contacts-info__item-icon contacts-info__item-icon-time"></div>
+                <div class="contacts-info__item-text">
+                    <span>Рабочие часы</span>
+                    <div>10:00-20:00</div>
+                </div>
+            </div>
+        </div>
+        <div class="contacts-btn">
+            <a href="/order/" class="butn butn-black">Записаться</a>
+        </div>
+
+    </div>
+    
+    
 {% endblock %}

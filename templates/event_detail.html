@@ -2,28 +2,26 @@
 {% block title %}{{event.name}}{% endblock %}
 {% block page %}
     <div class="back-line">
-        <a href="">< Назад</a>
+        <a href="/events/">< Назад</a>
     </div>
     <div class="detail-page">
         {% for slide in slides %}
         <div class="sport-detail__section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="detail-text">
-                            <h2> {{slide.name}}</h2>
-                            <p>
-                                 {{slide.description}}
-                            </p>
-                            <a href="" class="butn">Регистрация</a>
-                        </div>
+            <div class="sport-detail__section-inner">
+                <div class="sport-detail__section-left">
+                    <div class="detail-text">
+                        <h2> {{slide.name}}</h2>
+                        <p>
+                             {{slide.description}}
+                        </p>
+                        <a href="" class="butn">Регистрация</a>
                     </div>
-                    <div class="col-md-5">
-                        <div class="detail-image">
-                            {% if slide.image %}
-                                <img src="{{ slide.image.url }}" alt="">
-                            {% endif %}
-                        </div>
+                </div>
+                <div class="sport-detail__section-right">
+                    <div class="detail-image">
+                        {% if slide.image %}
+                            <img src="{{ slide.image.url }}" alt="">
+                        {% endif %}
                     </div>
                 </div>
             </div>

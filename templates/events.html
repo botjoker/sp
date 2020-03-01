@@ -5,9 +5,16 @@
 {% block page %}
     <div class="events-page">
         <div class="events-top">
-            <a class="events-top__link">Футбол</a>
-            <a class="events-top__link">Единоборства</a>
-            <a class="events-top__link">Гимнастика</a>
+            <div class="events-top__left">
+                <a class="events-top__link">Футбол</a>
+                <a class="events-top__link">Единоборства</a>
+                <a class="events-top__link">Гимнастика</a>
+            </div>
+            <div class="events-top__right">
+                <a class="events-top__link">Стадион 1</a>
+                <a class="events-top__link">Стадион 2</a>
+                <a class="events-top__link">Стадион 3</a>
+            </div>
         </div>
         <div class="events-content">
             {% for event in events %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block page %}
+    <div class="contacts-page">
+        <div class="contacts-top">
+            <img src="/static/img/contacts.jpg" width="100%" alt="">
+        </div>
+        <div class="order-info">
+            <h2 class="order-info__title">Оставьте заявку и персональный менеджер свяжется с вами</h2>
+            <form>
+
+                <div class="order-block">
+                    <label for="">ФИО</label>
+                    <input type="text" />
+                </div>
+                <div class="order-block">
+                    <label for="">Телефон</label>
+                    <input type="text" />
+                </div>
+                <div class="order-block">
+                    <label for="">Возраст</label>
+                    <input type="text" />
+                </div>
+                <div class="order-block">
+                    <label class="checkbox-label" for="">
+                        <input type="checkbox" />
+                        Устанавливая флажок в этом поле, вы подтверждаете свое прочтение и согласие с Условиями проведения мероприятий и обработкой персональных данных.
+                    </label>
+                </div>
+                <div class="order-block">
+                    <button class="butn butn-black">Записаться</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+{% endblock %}
