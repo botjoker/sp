@@ -27,6 +27,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('sport/<str:sport_id>/', views.sport_detail, name='sport-detail'),
     path('events/<str:event_id>/', views.event_detail, name='event-detail'),
+    path('stadiums/<str:stadium_id>/', views.stadium_detail, name='stadium-detail'),
     path('contacts/', views.contacts, name='contacts'),
     path('order/', views.order, name='order'),
     path('map/', views.map, name='map'),

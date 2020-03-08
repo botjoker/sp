@@ -219,6 +219,7 @@ footer li a {
     margin-left: -215px;
 }
 
+
 .sport-detail__section:nth-child(even) {
     background: #F5F5F5;
     color: #000;
@@ -229,6 +230,7 @@ footer li a {
     color: #000;
     width: 240px;
 }
+
 
 .sport-detail__section:nth-child(even) .butn {
     background: #000;
@@ -262,7 +264,7 @@ footer li a {
 }
 
 .detail-text td {
-    padding: 10px 20px;
+    padding: 4px 20px;
     border-right: 1px solid #FFF;
     text-align: left
 }
@@ -393,7 +395,7 @@ footer li a {
 
 .contacts-info {
     overflow: hidden;
-    width: 700px;
+    width: 840px;
     margin: 0 auto 60px;
 }
 
@@ -489,4 +491,44 @@ footer li a {
 .order-info label.checkbox-label {
     text-transform: none;
     width: auto;
+}
+
+
+/******* stadium ******/
+
+.stadium-item__title1 {
+    color: #FFF;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 34px;
+}
+
+.stadium-item__title2 {
+    color: #FFF;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    font-size: 34px;
+}
+
+.stadium-item__title3 {
+    color: #FFF;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 28px;
+}
+
+.stadium-detail__title {
+    font-size: 50px;
+    letter-spacing: -2px;
+    line-height: 42px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
 }

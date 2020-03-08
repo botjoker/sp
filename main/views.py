@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from main.models import Sport, Events, SportSlide, EventSlide
+from main.models import Sport, Events, SportSlide, EventSlide, Stadiums
 
 def home(request):
     sports = Sport.objects.order_by('sort').all()
@@ -15,6 +15,10 @@ def event_detail(request, event_id):
     slides = EventSlide.objects.filter(event=event_id).order_by('sort')
     return render(request, 'event_detail.html', {'page_title': 'Детальная', 'event': event, 'slides': slides})
 
+def stadium_detail(request, stadium_id):
+    stadium = get_object_or_404(Stadiums, id=stadium_id)
+    return render(request, 'stadium_detail.html', {'page_title': 'Детальная', 'stadium': stadium, 'sports': stadium.sport.split(',')})
+
 
 def contacts(request):
     return render(request, 'contacts.html', {'page_title': 'Контакты'})
@@ -25,9 +29,9 @@ def map(request):
 def order(request):
     return render(request, 'order.html', {'page_title': 'Заказ'})
 
-
 def stadiums(request):
-    return render(request, 'stadiums.html', {'page_title': 'Стадионы'})
+    stadiums = Stadiums.objects.order_by('sort').all()
+    return render(request, 'stadiums.html', {'page_title': 'Стадионы', 'stadiums': stadiums})
 
 def events(request):
     events = Events.objects.order_by('sort').all()

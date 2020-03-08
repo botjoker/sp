@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}{{stadium.name}}{% endblock %}
+{% block page %}
+    <div class="back-line">
+        <a href="/stadiums/">< Назад</a>
+    </div>
+    <div class="detail-page">
+        <div class="stadium-detail__top-img">
+            <img src="{{ stadium.imagebig.url }}" alt="">
+        </div>
+        <div class="container">
+            <div class="stadium-detail__title">
+                Стадион «{{stadium.name}}»
+            </div>
+             <div class="contacts-info">
+                <div class="contacts-info__item">
+                    <div class="contacts-info__item-icon contacts-info__item-icon-location"></div>
+                    <div class="contacts-info__item-text">
+                        <span>Местонахождение</span>
+                        <a href="mailto:info@school-ball.com">info@school-ball.com</a>
+                    </div>
+                </div>
+                <div class="contacts-info__item">
+                    <div class="contacts-info__item-icon contacts-info__item-icon-data"></div>
+                    <div class="contacts-info__item-text">
+                        <span>Смены проводятся с</span>
+                        <div>{{ stadium.timefrom }}</div>
+                        <div>{{ stadium.timeto }}</div>
+                    </div>
+                </div>
+                <div class="contacts-info__item">
+                    <div class="contacts-info__item-icon contacts-info__item-icon-time"></div>
+                    <div class="contacts-info__item-text">
+                        <span>Виды спорта</span>
+                        {% for sport in sports %}
+                        <div>
+                            {{ sport }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sport-detail__section sport-detail__section--gray" >
+            <div class="sport-detail__section-inner">
+                <div class="sport-detail__section-left">
+                    <div class="detail-text">
+                        {{ stadium.description }}
+                        <a href="" class="butn">Записаться</a>
+                    </div>
+                </div>
+                <div class="sport-detail__section-right">
+                    <div class="detail-image">
+                            <img src="/static/img/temp.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

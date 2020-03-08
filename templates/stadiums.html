@@ -3,5 +3,25 @@
 {% block title %}Стадионы{% endblock %}
 
 {% block page %}
-   Stadiums
+     <div class="main">
+        <div class="sports-wrapper">
+            <div class="sports">
+                <div class="sports-text">
+                    Мы подобрали для вас несколько стадионов в Москве
+                </div>
+                {% for stadium in stadiums %}
+                    <div class="sports-item">
+                        <a href="{% url 'stadium-detail' stadium_id=stadium.id %}">
+                            {% if stadium.image %}
+                                <img class="sports-item__img" width="100%" src="{{ stadium.image.url }}" alt="">
+                            {% endif %}
+                            <span class="stadium-item__title1">ЦАО</span>
+                            <span class="stadium-item__title2">{{ stadium.name }}</span>
+                            <span class="stadium-item__title3">{{ stadium.metro }}</span>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
