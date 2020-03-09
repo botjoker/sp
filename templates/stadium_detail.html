@@ -17,7 +17,8 @@
                     <div class="contacts-info__item-icon contacts-info__item-icon-location"></div>
                     <div class="contacts-info__item-text">
                         <span>Местонахождение</span>
-                        <a href="mailto:info@school-ball.com">info@school-ball.com</a>
+                        {{ stadium.adress }}<br/>
+                        <a href="http://maps.yandex.ru/?text={{ stadium.coordinates }}" target="_blank">На карте</a>
                     </div>
                 </div>
                 <div class="contacts-info__item">
@@ -33,7 +34,7 @@
                     <div class="contacts-info__item-text">
                         <span>Виды спорта</span>
                         {% for sport in sports %}
-                        <div>
+                        <div class="stadium__sport-item">
                             {{ sport }}
                         </div>
                         {% endfor %}
@@ -46,7 +47,7 @@
                 <div class="sport-detail__section-left">
                     <div class="detail-text">
                         {{ stadium.description }}
-                        <a href="" class="butn">Записаться</a>
+                        <a href="/order/" class="butn">Записаться</a>
                     </div>
                 </div>
                 <div class="sport-detail__section-right">

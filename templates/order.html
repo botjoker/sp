@@ -3,10 +3,7 @@
 {% block title %}Контакты{% endblock %}
 
 {% block page %}
-    <div class="contacts-page">
-        <div class="contacts-top">
-            <img src="/static/img/contacts.jpg" width="100%" alt="">
-        </div>
+    <div class="order-page">
         <div class="order-info">
             <h2 class="order-info__title">Оставьте заявку и персональный менеджер свяжется с вами</h2>
             <form>
@@ -17,11 +14,11 @@
                 </div>
                 <div class="order-block">
                     <label for="">Телефон</label>
-                    <input type="text" />
+                    <input name="phone" type="text" placeholder="+7 (___) ___-__-__" />
                 </div>
                 <div class="order-block">
                     <label for="">Возраст</label>
-                    <input type="text" />
+                    <input name="birth" type="text" placeholder="__.__.____" />
                 </div>
                 <div class="order-block">
                     <label class="checkbox-label" for="">

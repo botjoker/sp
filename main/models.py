@@ -94,9 +94,8 @@ class Prices(models.Model):
     sport = models.ForeignKey(Sport, on_delete=models.SET_NULL, null=True)
     stadium = models.ForeignKey(Stadiums, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=250)
-    image1 = models.ImageField('Изображение1', upload_to='main/images', default='', blank=True, null=True)
-    image2 = models.ImageField('Изображение2', upload_to='main/images', default='', blank=True, null=True)
-    image3 = models.ImageField('Изображение3', upload_to='main/images', default='', blank=True, null=True)
+    price = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
+    image = models.ImageField('Изображение1', upload_to='main/images', default='', blank=True, null=True)
     sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
 
     class Meta:

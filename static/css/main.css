@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    outline: none !important;
 }
 
 .butn {
@@ -459,6 +460,12 @@ footer li a {
 
 /***** order page ******/
 
+.order-page {
+    background: #F2F2F2;
+    padding-top: 180px;
+    min-height: 100vh;
+}
+
 .order-info__title {
     text-transform: uppercase;
     font-size: 18px;
@@ -531,4 +538,37 @@ footer li a {
     font-weight: bold;
     text-align: center;
     padding-top: 30px;
+}
+
+.contacts-info__item-text .stadium__sport-item {
+    font-size: 16px;
+    text-transform: capitalize;
+    /*font-weight: bold;*/
+}
+
+
+/****** Prices *******/
+
+.prices__sports {
+    display: block;
+    padding: 70px 40px 60px;
+    background: #EEEEEE;
+    min-height: 100vh;
+}
+
+.prices__sport-item {
+    clear: both;
+    overflow: hidden;
+}
+.prices__sport-item-title {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.price__item {
+    float: left;
+    width: 30%;
+    height: 630px;
+    margin-bottom: 40px;
+    border: 1px solid #2e6da4;
 }
