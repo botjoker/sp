@@ -6,19 +6,22 @@
     <div class="events-page">
         <div class="events-top">
             <div class="events-top__left">
-                <a class="events-top__link">Футбол</a>
-                <a class="events-top__link">Единоборства</a>
-                <a class="events-top__link">Гимнастика</a>
+                {% for sport in sports %}
+                    <a class="events-top__link">{{ sport.name }}</a>
+                {% endfor %}
             </div>
             <div class="events-top__right">
-                <a class="events-top__link">Стадион 1</a>
-                <a class="events-top__link">Стадион 2</a>
-                <a class="events-top__link">Стадион 3</a>
+                {% for stadium in stadiums %}
+                    <a class="events-top__link">{{ stadium.name }}</a>
+                {% endfor %}
             </div>
         </div>
         <div class="events-content">
             {% for event in events %}
-                <a href="/events/{{ event.id }}" class="event-item">
+                <a href="/events/{{ event.id }}"
+                   class="event-item"
+                   data-sport="{{ event.sport.name }}"
+                   data-stadium="{{ event.stadium.name }}">
                     <span class="event-item__info">
                         <span class="event-item__type">{{ event.sport }}</span>
                         <span class="event-item__date">{{ event.eventDate }}</span>

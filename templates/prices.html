@@ -6,25 +6,8 @@
     <div class="events-page">
         <div class="prices__sports">
 
-        {% for sport in sports %}
-            <div class="prices__sport-item">
-                <div class="prices__sport-item-title">{{ sport.name }}</div>
-                <div class="price__item">
-                    {% for section in sections %}
-                        {% if sport.name == section.sport.name %}
-                            {{ section.stadium.name }}
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="price__item">
-                    {% for day in days %}
-                        {% if sport.name == day.sport.name %}
-                            {{ day.stadium.name }}
-                        {% endif %}
-                    {% endfor %}
-                </div>
-
-            </div>
+        {% for price in prices  %}
+            {{ price }}
         {% endfor %}
         </div>
     </div>

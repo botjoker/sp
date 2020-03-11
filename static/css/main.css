@@ -503,6 +503,10 @@ footer li a {
 
 /******* stadium ******/
 
+.stadium-detail__top-img {
+    min-height: 500px;
+}
+
 .stadium-item__title1 {
     color: #FFF;
     font-weight: bold;
@@ -546,6 +550,35 @@ footer li a {
     /*font-weight: bold;*/
 }
 
+.sport-detail__section-right .slider {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.sport-detail__section-right .slider img {
+    margin: 0;
+    width: 100%;
+    left: auto;
+    max-width: 400px;
+}
+
+.sport-detail__section-right .slider .slick-list {
+    overflow: hidden;
+}
+
+.sport-detail__section-right .slider .prev-arr {
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    font-size: 40px;
+}
+.sport-detail__section-right .slider .next-arr {
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    font-size: 40px;
+}
 
 /****** Prices *******/
 
@@ -570,5 +603,5 @@ footer li a {
     width: 30%;
     height: 630px;
     margin-bottom: 40px;
-    border: 1px solid #2e6da4;
+    background-size: cover;
 }

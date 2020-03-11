@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from main.models import Sport, Events, SportSlide, EventSlide, Stadiums, Prices
+from main.models import Sport, Events, SportSlide, EventSlide, Stadiums, Prices, More, Trainers, Sliders, Images
 
 
 def home(request):
@@ -21,7 +21,10 @@ def event_detail(request, event_id):
 
 def stadium_detail(request, stadium_id):
     stadium = get_object_or_404(Stadiums, id=stadium_id)
-    return render(request, 'stadium_detail.html', {'page_title': 'Детальная', 'stadium': stadium, 'sports': stadium.sport.split(',')})
+    slider_id = Sliders.objects.get(stadium = stadium_id)
+    slides = Images.objects.filter(slider = slider_id).order_by('sort')
+    return render(request, 'stadium_detail.html',
+                  {'page_title': 'Детальная', 'stadium': stadium, 'sports': stadium.sport.split(','), 'slider_id': slider_id, 'slides': slides})
 
 
 def contacts(request):
@@ -43,22 +46,26 @@ def stadiums(request):
 
 def events(request):
     events = Events.objects.order_by('sort').all()
-    return render(request, 'events.html', {'page_title': 'События', 'events': events})
+    sports = Sport.objects.order_by('sort').all()
+    stadiums = Stadiums.objects.order_by('sort').all()
+    return render(request, 'events.html', {'page_title': 'События', 'events': events, 'sports': sports, 'stadiums': stadiums})
 
 
 def about(request):
     return render(request, 'about.html', {'page_title': 'О лагере'})
 
 
+def more(request, more_id):
+    more_info = get_object_or_404(More, id=more_id)
+    trainers = Trainers.objects.order_by('sort').all()
+    return render(request, 'more.html', {'page_title': 'Подробнее', 'more': more_info, 'trainers': trainers})
+
+
 def prices(request):
     sports = Sport.objects.order_by('sort').all()
     stadiums = Stadiums.objects.order_by('sort').all()
     prices = Prices.objects.order_by('sort').all()
-    sections = Prices.objects.order_by('sort').filter(name='Смена')
-    days = Prices.objects.order_by('sort').filter(name='День')
-    trains = Prices.objects.order_by('sort').filter(name='Тренировка')
 
     return render(request, 'prices.html',
-                  {'page_title': 'Цены', 'prices': prices, 'sports': sports, 'stadiums': stadiums,
-                   'days': days, 'sections': sections, 'trains': trains})
+                  {'page_title': 'Цены', 'prices': prices})
 

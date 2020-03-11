@@ -6,7 +6,13 @@
     </div>
     <div class="detail-page">
         <div class="stadium-detail__top-img">
-            <img src="{{ stadium.imagebig.url }}" alt="">
+            <object style="height: 500px; width: 100%">
+                <param name="movie" value="{{ stadium.video }}">
+                <param name="allowFullScreen" value="true">
+                <param name="allowScriptAccess" value="always">
+                <embed src="http://www.youtube.com/v/v1gTI4BOPUw?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390">
+            </object>
+
         </div>
         <div class="container">
             <div class="stadium-detail__title">
@@ -50,14 +56,30 @@
                         <a href="/order/" class="butn">Записаться</a>
                     </div>
                 </div>
-                <div class="sport-detail__section-right">
-                    <div class="detail-image">
-                            <img src="/static/img/temp.jpg" alt="">
+                <div class="sport-detail__section-right" style="padding-top: 50px;">
+                    <div class="slider">
+                        {% for slide in slides %}
+                            <img src="{{ slide.image.url }}" alt="">
+                        {% endfor %}
                     </div>
+
                 </div>
             </div>
         </div>
 
     </div>
 
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                prevArrow: '<span class="prev-arr"> < </span>',
+                nextArrow: '<span class="next-arr"> > </span>',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                variableWidth: true,
+                infinite: true,
+            })
+        });
+    </script>
 {% endblock %}

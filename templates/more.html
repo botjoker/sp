@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}{{stadium.name}}{% endblock %}
+{% block page %}
+    <div class="detail-page">
+        <div class="stadium-detail__top-img">
+            {{ more.video }}
+        </div>
+        <div class="container">
+            <div class="stadium-detail__title">
+                {{ more.name }}
+            </div>
+        </div>
+        <div class="sport-detail__section sport-detail__section--gray" >
+           {{ more.description }}
+        </div>
+        <div class="sport-detail__section" >
+            <div class="trainers-slider">
+                {% for trainer in trainers %}
+                    {% if trainer.more.id == more.id %}
+                        <div class="trainer-slide" style="background-image: url({{ trainer.image.url }})">
+                            <div>{{ trainer.name }}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
