@@ -437,6 +437,7 @@ footer li a {
 
 .contacts-info__item-text {
     margin-left: 54px;
+    font-size: 16px;
 }
 
 .contacts-info__item-text span {
@@ -450,7 +451,7 @@ footer li a {
 
 .contacts-info__item-text div {
     color: #111111;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .contacts-btn {
@@ -507,6 +508,8 @@ footer li a {
     min-height: 500px;
 }
 
+
+
 .stadium-item__title1 {
     color: #FFF;
     font-weight: bold;
@@ -532,6 +535,39 @@ footer li a {
     left: 20px;
     bottom: 20px;
     font-size: 28px;
+}
+
+.stadium-detail__section-right {
+    height: calc(100vh - 178px);
+    width: 400px;
+    margin-right: 100px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.owl-prev {
+    position: absolute;
+    top: 50%;
+    left: -28px;
+    font-size: 48px !important;
+    margin-top: -50px;
+}
+.owl-next {
+    position: absolute;
+    top: 50%;
+    right: -28px;
+    font-size: 48px !important;
+    margin-top: -50px;
+}
+
+.sport-detail__section .stadium-detail__section-right img {
+    max-width: none;
+    min-width: 0;
+    left: auto;
+    margin-left: 0;
+    max-height: none;
 }
 
 .stadium-detail__title {

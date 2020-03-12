@@ -57,10 +57,13 @@
                         <a href="/order/" class="butn">Записаться</a>
                     </div>
                 </div>
-                <div class="sport-detail__section-right" style="padding-top: 50px;">
-                    <div class="slider">
+                <div class="stadium-detail__section-right">
+                    <div class="owl-carousel">
+
                         {% for slide in slides %}
-                            <img src="{{ slide.image.url }}" alt="">
+                            <div>
+                                <img src="{{ slide.image.url }}" alt="">
+                            </div>
                         {% endfor %}
                     </div>
 
@@ -72,15 +75,11 @@
 
     <script>
         $(document).ready(function () {
-            $('.slider').slick({
-                prevArrow: '<span class="prev-arr"> < </span>',
-                nextArrow: '<span class="next-arr"> > </span>',
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerMode: true,
-                variableWidth: true,
-                infinite: true,
-            })
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                nav: true,
+                loop: true
+            });
         });
     </script>
 {% endblock %}
