@@ -6,7 +6,7 @@
     </div>
     <div class="detail-page">
         <div class="stadium-detail__top-img">
-            <iframe width="100%" height="500" src="{{ stadium.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="500" src="{{ stadium.video }}?hd=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         </div>
         <div class="container">
@@ -15,7 +15,7 @@
             </div>
              <div class="contacts-info">
                 <div class="contacts-info__item">
-                    <div class="contacts-info__item-icon contacts-info__item-icon-location"></div>
+                    <div class="contacts-info__item-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contacts-info__item-text">
                         <span>Местонахождение</span>
                         {{ stadium.adress }}<br/>
@@ -23,20 +23,20 @@
                     </div>
                 </div>
                 <div class="contacts-info__item">
-                    <div class="contacts-info__item-icon contacts-info__item-icon-data"></div>
+                    <div class="contacts-info__item-icon"><i class="far fa-calendar-alt"></i></div>
                     <div class="contacts-info__item-text">
-                        <span>Смены проводятся с</span>
-                        <div>{{ stadium.timefrom }}</div>
-                        <div>{{ stadium.timeto }}</div>
+                        <span>Смены проводятся</span>
+                        <div>c {{ stadium.timefrom }}</div>
+                        <div>по {{ stadium.timeto }}</div>
                     </div>
                 </div>
                 <div class="contacts-info__item">
-                    <div class="contacts-info__item-icon contacts-info__item-icon-time"></div>
+                    <div class="contacts-info__item-icon"><i class="fas fa-futbol"></i></div>
                     <div class="contacts-info__item-text">
                         <span>Виды спорта</span>
                         {% for sport in sports %}
                         <div class="stadium__sport-item">
-                            {{ sport }}
+                            ✓ {{ sport }}
                         </div>
                         {% endfor %}
                     </div>
@@ -56,8 +56,8 @@
                     <div class="owl-carousel">
 
                         {% for slide in slides %}
-                            <div>
-                                <img src="{{ slide.image.url }}" alt="">
+                            <div style="background-image: url({{ slide.image.url }}); background-size: cover; height: 60vh; background-position: 50%;">
+{#                                <img src="{{ slide.image.url }}" alt="">#}
                             </div>
                         {% endfor %}
                     </div>

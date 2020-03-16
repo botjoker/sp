@@ -434,6 +434,10 @@ footer li a {
     background-size: contain;
 }
 
+.contacts-info__item-icon i {
+    font-size: 40px;
+    color: #333333;
+}
 
 .contacts-info__item-text {
     margin-left: 54px;
@@ -614,6 +618,11 @@ footer li a {
     top: 50%;
     right: -30px;
     font-size: 40px;
+}
+
+.stadium-detail__section-right .owl-carousel {
+    max-height: 60vh;
+    width: 300px;
 }
 
 /****** Prices *******/
