@@ -55,8 +55,25 @@ class Stadiums(models.Model):
         return self.name
 
 
+class More(models.Model):
+    sport = models.ForeignKey(Sport, on_delete=models.SET_NULL, null=True)
+    name = models.CharField(max_length=250)
+    video = models.TextField(verbose_name='Видео', default='', blank=True)
+    description = models.TextField(verbose_name='Расписание', default='', blank=True)
+    sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
+
+    class Meta:
+        verbose_name='Подробнее'
+        verbose_name_plural='Подробнее'
+        ordering=['id']
+
+    def __str__(self):
+        return self.name
+
+
 class Events(models.Model):
     sport = models.ForeignKey(Sport, on_delete=models.SET_NULL, null=True)
+    more = models.ForeignKey(More, on_delete=models.SET_NULL, null=True)
     stadium = models.ForeignKey(Stadiums, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=30, verbose_name='Событие')
     image = models.ImageField('Изображение', upload_to='main/images', default='',blank=True)
@@ -78,6 +95,7 @@ class EventSlide(models.Model):
     event = models.ForeignKey(Events, on_delete = models.SET_NULL, null=True)
     name = models.CharField(max_length=250)
     description = models.TextField(verbose_name='Описание', default='', blank=True)
+    video = models.TextField(verbose_name='Видео', default='', blank=True)
     image = models.ImageField('Изображение', upload_to='main/images', default='', blank=True, null=True)
     sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
 
@@ -103,22 +121,6 @@ class Prices(models.Model):
     class Meta:
         verbose_name='Цена'
         verbose_name_plural='Цены'
-        ordering=['id']
-
-    def __str__(self):
-        return self.name
-
-
-class More(models.Model):
-    sport = models.ForeignKey(Sport, on_delete=models.SET_NULL, null=True)
-    name = models.CharField(max_length=250)
-    video = models.TextField(verbose_name='Видео', default='', blank=True)
-    description = models.TextField(verbose_name='Расписание', default='', blank=True)
-    sort = models.DecimalField(max_digits=5, decimal_places=0, blank=True, null=True)
-
-    class Meta:
-        verbose_name='Подробнее'
-        verbose_name_plural='Подробнее'
         ordering=['id']
 
     def __str__(self):
