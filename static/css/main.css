@@ -193,8 +193,8 @@ footer li a {
 }
 .sport-detail__section {
     height: calc(100vh - 178px);
-    background: #111;
-    color: #FFF;
+    background: #FFF;
+    color: #111;
 
 }
 .sport-detail__section-inner {
@@ -222,20 +222,20 @@ footer li a {
 
 
 .sport-detail__section:nth-child(even) {
-    background: #F5F5F5;
-    color: #000;
+    background: #000;
+    color: #F5F5F5;
 }
 
 .sport-detail__section .butn {
-    background: #FFF;
-    color: #000;
+    background: #000;
+    color: #FFF;
     width: 240px;
 }
 
 
 .sport-detail__section:nth-child(even) .butn {
-    background: #000;
-    color: #FFF;
+    background: #FFF;
+    color: #000;
 }
 
 .detail-image {
