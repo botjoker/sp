@@ -213,11 +213,10 @@ footer li a {
 }
 
 .sport-detail__section img {
-    max-width: 430px;
-    max-height: calc(100vh - 308px);
     position: relative;
     left: 50%;
     margin-left: -215px;
+    width: 70%;
 }
 
 
